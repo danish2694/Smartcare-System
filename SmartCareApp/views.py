@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
-from SmartCareApp.models import CallCentre,Planning,Location_Details,Details,Technician,Contract,Amount,VisitDetail,Royalty,Rating
+from SmartCareApp.models import CallCentre,Planning,Location_Details,Details,Technician,Contract,Amount,VisitDetail,Royalty,Rating,LoginDetail
+from django.contrib.sessions.models import Session
 import random
 from datetime import date
 import datetime
@@ -21,15 +22,51 @@ def smartcare(request):
     return render(request,'login.html')
 
 def login(request):
+    if request.session.has_key('is_logged'):
+        if request.session['is_logged'] == 0:
+            return HttpResponseRedirect('/callcentre')
+        elif request.session['is_logged'] == 1:
+            return HttpResponseRedirect('/servicecentre')
+    else:
+        return render(request,'login.html')
+
+def logging(request):
     if request.method=="POST":
         uname=request.POST.get('username')
         upass=request.POST.get('password')
 
+    login_validate = LoginDetail.objects.filter(Username=uname,Password=upass)
+    if login_validate:
+        for account in login_validate:
+            account_type = account.Account_Type
+        request.session['is_logged'] = account_type
+        if account_type == 0:
+            return HttpResponseRedirect('/callcentre')
+        elif account_type == 1:
+            return HttpResponseRedirect('/servicecentre')
+        else:
+            return render(request,'login.html')
+    else:
+        error_msg = True
+        return render(request,'login.html',{'error':error_msg})
+
+def logout(request):
+    if request.session.has_key('is_logged'):
+        del request.session['is_logged']
+        return HttpResponseRedirect('/login')
+    return HttpResponseRedirect('/login')
+
 def callcentre(request):
-    return render(request,'callcentre.html')
+    if request.session.has_key('is_logged'):
+        return render(request,'callcentre.html')
+    else:
+        return HttpResponseRedirect('/login')
 
 def callregister(request):
-    return render(request,'callregister.html')
+    if request.session.has_key('is_logged'):
+        return render(request,'callregister.html')
+    else:
+        return HttpResponseRedirect('/login')
 
 def contract(request):
     return render(request,'contract.html')
