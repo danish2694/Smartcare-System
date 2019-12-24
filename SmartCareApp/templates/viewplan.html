@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% block title %} Blank Calls {% endblock %}
+{% block head %} Blank Calls {% endblock %}
+
+{% block body %}
+<form name="blank" action="" method="POST">{% csrf_token %}
+     <table class="table table-bordered table-light">
+        <thead>
+            <tr>
+            <th scope="col" class="table-dark">Service Order</th>
+            <th scope="col" class="table-dark">Appointment Date</th>
+            <th scope="col" class="table-dark">Appointment Time</th>
+            <th scope="col" class="table-dark">Technician</th>
+            <th scope="col" class="table-dark">Technician Name</th>
+            <th scope="col" class="table-dark">Execution Date</th>
+            <th scope="col" class="table-dark">Execution Time</th>
+            <th scope="col" class="table-dark">End Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for e in alldata %}
+                <th scope="row" bgcolor="skyblue"><b>{{e.Service_Order}}</b></th>
+                <td bgcolor="skyblue">{{e.Appointment_Date}}</td>
+                <td bgcolor="skyblue">{{e.Appointment_Time}}</td>
+                <td bgcolor="skyblue">{{e.Technician}}</td>
+                <td bgcolor="skyblue">{{e.Technician_Name}}</td>
+                <td bgcolor="skyblue">{{e.Execution_Date}}</td>
+                <td bgcolor="skyblue">{{e.Execution_Time}}</td>
+                <td bgcolor="skyblue">{{e.End_Time}}</td>
+            </tr>
+            
+        </tbody>
+            {%endfor %}
+    </table>
+</form>
+  {% endblock %}}
+

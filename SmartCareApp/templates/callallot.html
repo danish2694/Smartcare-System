@@ -1,0 +1,178 @@
+{% extends 'index.html' %}
+{% block title %} Technician Call Allocation {% endblock %}
+{% block body %}
+
+<form name="addform" action="/callplanning/" method="POST" id="myForm">{% csrf_token %}
+
+<table border="0" cellpadding="0" cellspacing="1" width="75%" align="center">
+<tbody>
+    <tr>
+        <td>Service Order</td>
+        <td>Appointment Date</td>
+        <td>Appointment Time</td>
+        <td>Technician</td>
+        <td>Execution Date</td>
+        <td>Execution Time</td>
+        <td>End Time</td>
+    </tr>
+    <tr>
+        <td><input type="text" id="od0" name="od0"></td>
+        <td><input type="date" id="ad0" name="ad0"></td>
+        <td><input type="text" id="at0" name="at0" maxlength="4"></td>
+        <td><input type="text" id="t0" name="t0"></td>
+        <td><input type="date" id="ed0" name="ed0"></td>
+        <td><input type="text" id="st0" name="st0" maxlength="4"></td>
+        <td><input type="text" id="et0" name="et0" maxlength="4"></td>
+    </tr>
+    <tr>
+        <td><input type="text" id="od1" name="od1"></td>
+        <td><input type="date" id="ad1" name="ad1"></td>
+        <td><input type="text" id="at1" name="at1" maxlength="4"></td>
+        <td><input type="text" id="t1" name="t1"></td>
+        <td><input type="date" id="ed1" name="ed1"></td>
+        <td><input type="text" id="st1" name="st1" maxlength="4"></td>
+        <td><input type="text" id="et1" name="et1" maxlength="4"></td>
+    </tr>
+</tbody>
+</table>
+    <div class="container mt-3" style="margin-left: 600px;">
+    <button onclick='validateFields("2019-07-26","1700")' class="btn btn-primary">Save</button>
+</div>
+
+{% endblock %}
+{% block js %}
+<script>
+        console.log('there');
+
+   
+    console.log('there1');
+
+    function validateFields(curDate,curTime)
+	{
+		console.log('here');
+		saveFlag = "OFF";
+		for(loopCount=0; loopCount < 10; loopCount++)
+		{			
+            /* od=document.getElementById("orno0").value();
+            ad=document.getElementById("orno0").value();
+            od=document.getElementById("orno0").value();
+            od=document.getElementById("orno0").value();
+            od=document.getElementById("orno0").value();
+            od=document.getElementById("orno0").value();
+            od=document.getElementById("orno0").value();
+            */
+			od = eval("document.addform.od"+ loopCount);
+			ad = eval("document.addform.ad"+ loopCount);
+			at = eval("document.addform.at"+ loopCount);
+			t = eval("document.addform.t"+ loopCount);
+			ed = eval("document.addform.ed"+ loopCount);
+			st = eval("document.addform.st"+ loopCount);
+            et = eval("document.addform.et"+ loopCount);
+            console.log(od);
+            
+		if(  (od)!="" &&  (ad)!=="" &&  (at)!="" &&  (t)!="" &&  (ed)!="" &&  (st)!="" &&  (et)!="" )
+			{
+				saveFlag = "ON"; 
+				if(  (ad)!="" && ad.value!=curDate)
+				{
+					console.log(ad.value);
+					console.log(curDate);
+					alert("Appointment Date should be greater than or equal to Current Date");
+					ad.focus();
+					return false;
+				}
+				if( !( st.value < et.value ))
+				{	
+					console.log(st.value);
+					console.log(et.value);
+					alert("Start time should be prior to the End Time!");
+					et.focus();
+					return false;
+				}
+			/*	if( (!(ValidPositiveWithZeroInt(st.value)) || !(isValidTimeRange(st))) )
+				{
+					alert("Enter valid Start time!");
+					st.focus();
+					return false;
+				}
+				if( (!(ValidPositiveWithZeroInt(et.value)) || !(isValidTimeRange(et))) )
+				{
+					alert("Enter valid End time!");
+					et.focus();
+					return false;
+				}
+				*/
+					
+				if(  (ed)!="" &&  (ad)!="" && ed.value!=ad.value )
+				{
+					alert("Execution Date should be greater than or equal to Appointment Date");
+					ed.focus();
+					return false;
+				}	
+				if(  (st)!="" && (ed.value==ad.value) && (st.value < at.value ) )
+				{
+					alert("Execution Time should be greater than or equal to Appintment Time");
+					st.focus();
+					return false;
+				}
+			
+			}
+else if(  (od)=="" ||  (ad)=="" ||  (at)=="" ||  (t)=="" ||  (st)=="" ||  (et)=="" ) 
+comsole.log('hey');
+{
+	alert("For a record to be saved, Service Order No, Appointment Date, Appontment time, Technician Code, Execution Date, Start Time, End Time, Customer Mobile No and Contacted Customer Name are to be entered for that record!");
+}
+			
+
+				if(!  (od) )
+				{
+					od.focus();
+					return false;
+				}
+				if(!  (ad) )
+				{
+					ad.focus();
+					return false;
+				}
+				if(!  (at) )
+				{
+					at.focus();
+					return false;
+				}
+				if(!  (t) )
+				{
+					t.focus();
+					return false;
+				}
+				if(!  (ed) )
+				{
+					ed.focus();
+					return false;
+				}
+				if(!  (st) )
+				{
+					st.focus();
+					return false;
+				}
+				if(!  (et) )
+				{
+					et.focus();
+					return false;
+				}
+
+			}
+		}
+		if( saveFlag == "OFF" )
+		{
+			alert("Enter atleast 1 record to save!");
+
+		}
+        return true;
+        document.getElementById("myForm").submit();
+    
+    //validateFields("24-07-2019","1700");
+
+    
+
+</script>
+{% endblock %}

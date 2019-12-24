@@ -1,0 +1,81 @@
+{% extends 'index.html' %}
+{% block title %} Service Centre {% endblock %}
+
+{% block body %}
+<div class="container">
+<div class="col-12 my-4">
+<div class="accordion text-center" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button">
+                <h4><a href='/search/'>Search</a></h4>
+              </button>
+            </h2>
+          </div>   
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button">
+                <h4><a href='/newcalls/'>New Calls</a></h4>
+              </button>
+            </h2>
+          </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button">
+                    <h4><a href='/freecalls/'>Free Calls</a></h4>
+                </button>
+                </h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingFour">
+                <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button">
+                    <h4><a href='/blankcalls/'>Blank Calls</a></h4>
+                </button>
+                </h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingFive">
+                <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button">
+                    <h4><a href='/pendingcalls/'>Pending Calls</a></h4>
+                </button>
+                </h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button">
+                    <h4><a href='/callupdate/'>Call Updation</a></h4>
+                </button>
+                </h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button">
+                    <h4><a href='/reports/'>Download Reports</a></h4>
+                </button>
+                </h2>
+            </div>
+        </div>
+
+    </div>
+    </div>
+</div>
+{% endblock %}}

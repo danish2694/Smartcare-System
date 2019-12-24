@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+{% block title %} Pending Calls {% endblock %}
+{% block head %} Pending Calls {% endblock %}
+
+{% block body %}
+<center>
+    <h2>{{msg}}</h2>
+</center>
+<form name="blank" action="/viewvisit/" method="POST">{% csrf_token %}
+     <table class="table table-bordered table-light">
+        <thead>
+            <tr>
+            <th scope="col" class="table-dark">Service Order</th>
+            <th scope="col" class="table-dark">Location</th>
+            <th scope="col" class="table-dark">Reported Date</th>
+            <th scope="col" class="table-dark">Reported Time</th>
+            <th scope="col" class="table-dark">Status</th>
+            <th scope="col" class="table-dark">First Name</th>
+            <th scope="col" class="table-dark">Last Name</th>
+            <th scope="col" class="table-dark">Product</th>
+            <th scope="col" class="table-dark">Fault</th>
+            <th scope="col" class="table-dark">Address</th>
+            <th scope="col" class="table-dark">City</th>
+            <th scope="col" class="table-dark">Mobile No.</th>
+            <th scope="col" class="table-dark">PIN</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for e in alldata %}
+                <th scope="row" bgcolor="skyblue"><input type="radio" name="pendingord" value="{{e.Service_Order}}">{{e.Service_Order}}</th>
+                <td bgcolor="skyblue">{{e.Location}}</td>
+                <td bgcolor="skyblue">{{e.Reported_Date}}</td>
+                <td bgcolor="skyblue">{{e.Reported_Time}}</td>
+                <td bgcolor="skyblue">{{e.Status}}</td>
+                <td bgcolor="skyblue">{{e.First_Name}}</td>
+                <td bgcolor="skyblue">{{e.Last_Name}}</td>
+                <td bgcolor="skyblue">{{e.Product}}</td>
+                <td bgcolor="skyblue">{{e.Fault}}</td>
+                <td bgcolor="skyblue">{{e.Address}}</td>
+                <td bgcolor="skyblue">{{e.City}}</td>
+                <td bgcolor="skyblue">{{e.Mobile_No}}</td>
+                <td bgcolor="skyblue">{{e.Pin_Code}}</td>
+            </tr>
+            
+        </tbody>
+            {%endfor %}
+    </table>
+    <button style="margin-left: 600px;" type="submit" class="btn btn-primary">View Visit</button>   
+</form>
+        
+  {% endblock %}}

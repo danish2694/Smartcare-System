@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+{% block title %} Royalty {% endblock %}
+{% block head %} Royalty {% endblock %}
+
+{% block body %}
+<center>
+    <h2>{{msg}}</h2>
+</center>
+     <table class="table table-bordered table-light">
+        <thead>
+            <tr>
+            <th scope="col" class="table-dark">Service Order</th>
+            <th scope="col" class="table-dark">Location</th>
+            <th scope="col" class="table-dark">Technician</th>
+            <th scope="col" class="table-dark">Technician Name</th>
+            <th scope="col" class="table-dark">Service Charge</th>
+            <th scope="col" class="table-dark">Category 1</th>
+            <th scope="col" class="table-dark">Part 1</th>
+            <th scope="col" class="table-dark">Amount</th>
+            <th scope="col" class="table-dark">Category 2</th>
+            <th scope="col" class="table-dark">Part 2</th>
+            <th scope="col" class="table-dark">Amount</th>
+            <th scope="col" class="table-dark">Category 3</th>
+            <th scope="col" class="table-dark">Part 3</th>
+            <th scope="col" class="table-dark">Amount</th>
+            <th scope="col" class="table-dark">Total Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for e in alldata %}
+                <th scope="row" bgcolor="skyblue">{{e.Service_Order}}</th>
+                <td bgcolor="skyblue">{{e.Location}}</td>
+                <td bgcolor="skyblue">{{e.Technician}}</td>
+                <td bgcolor="skyblue">{{e.Technician_Name}}</td>
+                <td bgcolor="skyblue">{{e.Service_Charge}}</td>
+                <td bgcolor="skyblue">{{e.Category1}}</td>
+                <td bgcolor="skyblue">{{e.Part_Name1}}</td>
+                <td bgcolor="skyblue">{{e.Part_Amount1}}</td>
+                <td bgcolor="skyblue">{{e.Category2}}</td>
+                <td bgcolor="skyblue">{{e.Part_Name2}}</td>
+                <td bgcolor="skyblue">{{e.Part_Amount2}}</td>
+                <td bgcolor="skyblue">{{e.Category3}}</td>
+                <td bgcolor="skyblue">{{e.Part_Name3}}</td>
+                <td bgcolor="skyblue">{{e.Part_Amount3}}</td>
+                <td bgcolor="skyblue">{{e.Total}}</td>
+            </tr>
+            
+        </tbody>
+            {%endfor %}
+    </table>
+  {% endblock %}}
+

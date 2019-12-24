@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+{% block title %} View Plan {% endblock %}
+{% block head %} View Plan {% endblock %}
+
+{% block body %}
+     <table class="table table-bordered table-light">
+        <thead>
+            <tr>
+            <th scope="col" class="table-dark">Service Order</th>
+            <th scope="col" class="table-dark">Appointment Date</th>
+            <th scope="col" class="table-dark">Appointment Time</th>
+            <th scope="col" class="table-dark">Technician</th>
+            <th scope="col" class="table-dark">Technician Name</th>
+            <th scope="col" class="table-dark">Execution Date</th>
+            <th scope="col" class="table-dark">Execution Time</th>
+            <th scope="col" class="table-dark">End Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for e in alldata %}
+                <th scope="row" bgcolor="skyblue"><a href='/#/{{e.Service_Order}}'>{{e.Service_Order}}</a></th>
+                <td bgcolor="skyblue">{{e.Appointment_Date}}</td>
+                <td bgcolor="skyblue">{{e.Appointment_Time}}</td>
+                <td bgcolor="skyblue">{{e.Technician}}</td>
+                <td bgcolor="skyblue">{{e.Technician_Name}}</td>
+                <td bgcolor="skyblue">{{e.Execution_Date}}</td>
+                <td bgcolor="skyblue">{{e.Execution_Time}}</td>
+                <td bgcolor="skyblue">{{e.End_Time}}</td>
+            </tr>
+            
+        </tbody>
+            {%endfor %}
+    </table>
+  {% endblock %}}
+

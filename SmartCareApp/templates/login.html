@@ -1,0 +1,30 @@
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}" >
+	<style>
+  body{
+  background-image: url("{% static 'images/k.jpeg' %}");
+  background-size: cover;
+}
+</style>
+</head>
+<body>
+	<div class="login-box">
+		<img src="{% static 'images/avatar.jpeg' %}" class="avatar">
+		<h1>Login Here</h1>
+		<form action="/login/" method="POST">{% csrf_token %}
+			<p>Username</p>
+			<input type="text" name="username" placeholder="Enter Username">
+			<p>Password</p>
+			<input type="password" name="password" placeholder="Enter Password">
+			<input type="submit" name="submit" value="Login">
+		</form>
+		
+	</div>
+
+</body>
+</html>

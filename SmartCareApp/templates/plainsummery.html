@@ -1,0 +1,61 @@
+{% extends 'index.html' %}
+{% block title %} Plain Summary Figures {% endblock %}
+{% block head %} Plain Summary Figures {% endblock %}
+{% block body %}
+<center>
+    <form name="" action="/plainsummarydownload/" method="POST">{% csrf_token %}
+<table class="table-bordered table-active table-sm my-4" width="55%">
+    <tbody>
+    <tr>
+        <td class="bg-primary"><b>Reported Date</b></td>
+        <td>From&nbsp;&nbsp;&nbsp;<input type="text" name="repdatestart" value="" placeholder="DD/MM/YYYY" maxlength="10"> </td>
+        <td>To&nbsp;&nbsp;&nbsp;<input type="text" name="repdateend" value="" placeholder="DD/MM/YYYY" maxlength="10"> </td>
+    </tr>
+    <tr>
+        <td class="bg-primary"><b>Customer Type</b></td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <select name="ctype">
+                    <option value="Customer">Customer</option>
+                    <option value="Dealer">Dealer</option>
+                </select>
+            </td>
+    </tr>
+    <tr>
+        <td class="bg-primary"><b>Status</b></td>
+        <td>From&nbsp;&nbsp;
+            <select name="statusfrom"><option value="1">Free</option>
+            <option value="2">Blank</option> 
+            <option value="3">Pending</option> 
+            <option value="4">Closed</option></select>
+        </td>
+        <td>To&nbsp;&nbsp;
+                <select name="statusto"><option value="1">Free</option>
+            <option value="2">Blank</option> 
+            <option value="3">Pending</option> 
+            <option value="4">Closed</option></select>
+        </td>
+    </tr>
+    <tr>
+        <td class="bg-primary"><b>PIN Code</b></td>
+        <td>From&nbsp;&nbsp;&nbsp;<input type="text" name="pinfrom" value="" minlength="6" maxlength="6"> </td>
+        <td>To&nbsp;&nbsp;&nbsp;<input type="text" name="pinto" value="" minlength="6" maxlength="6"> </td>
+    </tr>
+    <tr>
+        <td class="bg-primary"><b>Action</b></td>
+        <td>
+            <input type="radio" name="act" value="Pending">Pending
+            <input type="radio" name="act" value="Adjusted"> Adjusted
+            <input type="radio" name="act" value="Replaced">Replaced
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="vst" value="on">Include Visit
+        </td>
+    </tr>
+    </tbody>
+</table>
+<button type="submit" class="btn btn-primary">Download</button>
+</form>
+</center>
+{% endblock %}

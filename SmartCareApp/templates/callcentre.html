@@ -1,0 +1,71 @@
+{% extends 'index.html' %}
+{% block title %} Call Centre {% endblock %}
+
+{% block body %}
+<div class="container">
+<div class="col-12 my-4">
+<div class="accordion text-center" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button">
+                <h4><a href='/search/' target="_blank">Search</a></h4>
+              </button>
+            </h2>
+          </div>   
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button">
+                <h4><a href='/callregister/' target="_blank">Register New Call</a></h4>
+              </button>
+            </h2>
+          </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button">
+                    <h4><a href='/contract/' target="_blank">Extend Appliance Warranty</a></h4>
+                </button>
+                </h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingFour">
+                <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button">
+                    <h4><a href='/contractbook/'target="_blank">Book Extended Warranty</a></h4>
+                </button>
+                </h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingFour">
+                <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button">
+                    <h4><a href='/rating/'target="_blank">Rate Technician Service</a></h4>
+                </button>
+                </h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingFive">
+                <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button">
+                    <h4><a href='/custdetail/'target="_blank">Update Customer Details</a></h4>
+                </button>
+                </h2>
+            </div>
+        </div>
+
+    </div>
+    </div>
+</div>
+{% endblock %}}

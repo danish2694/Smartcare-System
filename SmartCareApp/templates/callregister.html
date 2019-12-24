@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+      
+{% block body %}
+  <center>  <h4>{{error}}</h4> </center>
+    <form class="container mt-5" name="ccentre" action="/callsave/" method="POST">{% csrf_token %}
+        <table width="100%">
+                <tbody>
+                    <tr>
+                        <td width="20%"><b>Service Order</b></td>
+                        <td><input type="text" class="form-control col-md-7" name="sorder" readonly value="{{a}}" readonly> </td>
+                        <td width="20%"><b>Location</b></td>
+                        <td><input type="text" class="form-control col-md-7" name="loc" readonly value="{{b}}" readonly> </td>
+                    </tr>
+                    <tr>
+                        <td width="20%"><b>First Name</b></td>
+                        <td><input type="text" class="form-control col-md-7" name="fname" value="{{c}}"> </td>
+                        <td width="20%"><b>Last Name</b></td>
+                        <td><input type="text" class="form-control col-md-7" name="lname" value="{{d}}"> </td>
+                    </tr>
+                    <tr>
+                        <td><b>Product</b></td>
+                        <td><select class="form-control col-md-7" name="prod" id="inputproduct">
+                                <option value="--select--">--Select--</option>
+                                <option value="AC" name="prod">AC</option>
+                                <option value="RF" name="prod">RF</option>
+                                <option value="WM" name="prod">WM</option>
+                                <option value="MW" name="prod">MW</option>
+                            </select></td>
+                        <td><b>Fault</b></td>
+                        <td><input type="text" class="form-control col-md-7"  name="fault" value="{{f}}"> </td>
+                    </tr>
+                    <tr>
+                        <td><b>Address</b></td>
+                        <td><input type="text" class="form-control col-md-7" name="address" value="{{g}}"> </td>
+                        <td><b>City</b></td>
+                        <td><input type="text" class="form-control col-md-7" name="city" value="{{h}}"> </td>
+                    </tr>
+                    <tr>
+                        <td><b>Mobile No.</b></td>
+                        <td><input type="text" class="form-control col-md-7"  name="mobile" value="{{i}}"> </td>
+                        <td><b>PIN Code</b></td>
+                        <td><input type="text" class="form-control col-md-7" name="pin" value="{{j}}"> </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="form-group row ml-3" align=center>
+                    <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary mt-5" id="button" onClick="validatecallcentre()">Register</button>
+                    </div>
+                </div>
+    </form>
+    {% endblock %}

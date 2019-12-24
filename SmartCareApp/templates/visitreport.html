@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+{% block title %} Visit Reports {% endblock %}
+{% block head %} Visit Reports {% endblock %}
+{% block body %}
+<center>
+    <form name="" action="/visitreportdwnld/" method="POST">{% csrf_token %}
+<table class="table-bordered table-active table-sm my-4" width="55%">
+    <tbody>
+        <tr>
+            <td class="bg-primary"><b>Reported Date</b></td>
+            <td>From&nbsp;&nbsp;&nbsp;<input type="text" name="repdatestart" value="" placeholder="DD/MM/YYYY" maxlength="10"> </td>
+            <td>To&nbsp;&nbsp;&nbsp;<input type="text" name="repdateend" value="" placeholder="DD/MM/YYYY" maxlength="10"> </td>
+        </tr>
+    <tr>
+        <td class="bg-primary"><b>Technician</b></td>
+        <td>From&nbsp;&nbsp;
+            <select name="techfrom">
+                {% for e in Names %}
+                    <option value="{{e.Name}}">{{e.Name}}</option>
+                {% endfor %}
+            </select>
+        </td>
+        <td>To&nbsp;&nbsp;
+            <select name="techto">
+                {% for e in Names %}
+                <option value="{{e.Name}}">{{e.Name}}</option>
+                {% endfor %}
+            </select>
+        </td>
+        
+    </tr>
+    <tr>
+        <td class="bg-primary"><b>Action</b></td>
+        <td>
+            <input type="radio" name="act" value="Pending">Pending
+            <input type="radio" name="act" value="Adjusted"> Adjusted
+            <input type="radio" name="act" value="Replaced">Replaced
+        </td>
+    </tr>
+    <tr>
+        <td class="bg-primary"><b>Visit Date</b></td>
+        <td>From&nbsp;&nbsp;&nbsp;<input type="text" name="vdatefrom" value="" placeholder="DD/MM/YYYY" maxlength="10"> </td>
+        <td>To&nbsp;&nbsp;&nbsp;<input type="text" name="vdateto" value="" placeholder="DD/MM/YYYY" maxlength="10"> </td>
+    </tr>
+    
+    <tr>
+        <td class="bg-primary"><b>Warranty</b></td>
+        <td>
+            <input type="radio" name="war" value="In Warranty">Warranty
+            <input type="radio" name="war" value="In Chargeable"> Chargeable
+            <input type="radio" name="war" value="In Contract">Contract
+        </td>
+    </tr>
+    
+    </tbody>
+</table>
+<button type="submit" class="btn btn-primary">Download</button>
+</form>
+</center>
+{% endblock %}

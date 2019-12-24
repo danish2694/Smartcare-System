@@ -1,0 +1,59 @@
+{% extends 'index.html'%}
+{% block title %} Display Appliance Details {% endblock %}
+{% block body %}
+
+
+<nav class="navbar navbar-light mt-4" style="background-color: #e3f2fd;">
+<div style="margin-left:500px;">
+    <b> <h2>Display Appliance Details</h2> </b>
+</div>
+</nav>
+<center>
+<table class="table-bordered table-active table-sm mt-2" width="50%">
+        <tbody>
+            <tr>
+                <td class="bg-primary"><b>Service Order</b></td>
+                <td><input type="text" name="" size="" value="{{sod}}" readonly> </td>
+            </tr>
+            <tr>
+                <td class="bg-primary"><b>Location</b></td>
+                <td><input type="text" name="" size="" value="{{location}}" readonly> </td>
+            </tr> 
+        </tbody>
+</table>
+</center>
+
+<table class="table table-bordered table-light mt-3">
+        <thead>
+            <tr>
+            <th scope="col" class="table-dark">Serial Number</th>
+            <th scope="col" class="table-dark">Product</th>
+            <th scope="col" class="table-dark">Customer Type</th>
+            <th scope="col" class="table-dark">Location</th>
+            <th scope="col" class="table-dark">Serial Number</th>
+            <th scope="col" class="table-dark">Date Of Purchase</th>
+            <th scope="col" class="table-dark">Warranty Expiry</th>
+            <th scope="col" class="table-dark">Contract Number</th>
+            <th scope="col" class="table-dark">Effective Warranty Date</th>
+            <th scope="col" class="table-dark">Effective Expiry Date</th>
+        </thead>
+        <tbody>
+            <tr>
+                {% for e in alldata %}
+                <th scope="row" bgcolor="skyblue"><a href='/calldetailsave/{{e.Serial_No}}'>{{e.Serial_No}}</a></th>
+                <td bgcolor="skyblue">{{e.Product_Code}}</td>
+                <td bgcolor="skyblue">{{e.Cust_Type}}</td>
+                <td bgcolor="skyblue">{{e.Location}}</td>
+                <td bgcolor="skyblue">{{e.Serial_No}}</td>
+                <td bgcolor="skyblue">{{e.DOP}}</td>
+                <td bgcolor="skyblue">{{e.Expiry}}</td>
+                <td bgcolor="skyblue">{{e.Contract_No}}</td>
+                <td bgcolor="skyblue">{{e.Effective_Date}}</td>
+                <td bgcolor="skyblue">{{e.Effective_Expiry}}</td>
+            </tr>
+            
+        </tbody>
+            {%endfor %}
+    </table>
+
+{% endblock %}

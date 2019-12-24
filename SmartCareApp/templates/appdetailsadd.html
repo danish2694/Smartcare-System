@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% block title %} Add Appliance Details {% endblock %}
+{% block body %}
+<center> <h1> Maintain Appliance Details</h1></center>
+<form name='appdetail' action="/appdetailsave/" method="POST">{% csrf_token %}
+<table class="table-bordered table-active table-sm mt-5" width="100%">
+        <tbody>
+            <tr>
+                <td class="bg-primary"><b>Location</b></td>
+                <td><input class="form-control col-sm-6" type="text" name="locno" size="" value="{{loc}}" readonly> </td>
+                <td class="bg-primary"><b>Customer Type</b></td>
+                <td><select class="form-control col-sm-6" name="cust" id="inputproduct" width="30">
+                        <option value="Customer">Customer</option>
+                        <option value="Dealer">Dealer</option>
+                </td>
+            </tr>
+            <tr>
+                <td class="bg-primary"><b>Product Code</b></td>
+                <td><input class="form-control col-sm-6" type="text" name="prdct" size="" value="{{code}}"> </td>
+                <td class="bg-primary"><b>Serial Number</b></td>
+                <td><input class="form-control col-sm-6" type="text" name="serno" value="{{sn}}" maxlength="10"> </td>
+            </tr>
+            <tr>
+                <td class="bg-primary"><b>Invoice/Bill Number</b></td>
+                <td><input class="form-control col-sm-6" type="text" name="billno" size="" value="{{bill}}"> </td>
+                <td class="bg-primary"><b>Date Of Purchase</b></td>
+                <td><input class="form-control col-sm-6" type="text" name="dop" value="{{dpp}}"> </td>
+            </tr>
+        </tbody>
+    </table>
+    <center>
+    <button class="btn btn-primary mt-3">Save</button>
+    <h2>{{msg}}</h2>
+    </center>
+</form>
+    {% endblock %}
+    

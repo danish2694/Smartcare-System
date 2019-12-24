@@ -1,0 +1,31 @@
+{% include 'search.html' %}
+{% block body %}
+
+<table class="table table-bordered table-light mt-4">
+    <thead>
+      <tr>
+        <th scope="col" class="table-dark">Location</th>
+        <th scope="col" class="table-dark">Contract No</th>
+        <th scope="col" class="table-dark">Product Code</th>
+        <th scope="col" class="table-dark">Serial No.</th>    
+        <th scope="col" class="table-dark">Start Date</th>
+        <th scope="col" class="table-dark">End Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+          {% for e in alldata %}            
+          <th scope="row" bgcolor="skyblue"><a href='/ordershow/{{e.Location}}'>{{e.Location}}</a></th>
+          <td bgcolor="skyblue">{{e.Contract_No}}</td>
+          <td bgcolor="skyblue">{{e.Product_Code}}</td>
+          <td bgcolor="skyblue">{{e.Serial_No}}</td>
+          <td bgcolor="skyblue">{{e.Start_Date}}</td>
+          <td bgcolor="skyblue">{{e.End_Date}}</td>
+        </tr>
+        
+      </tbody>
+      {%endfor %}
+  </table>
+
+{% endblock %}

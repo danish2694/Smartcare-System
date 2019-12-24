@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+{% block body %}
+<table class="table table-bordered table-light mt-4" style="margin-top: 800px;">
+    <thead>
+      <tr>
+        <th scope="col" class="table-dark">Service Order</th>
+        <th scope="col" class="table-dark">Location</th>
+        <th scope="col" class="table-dark">Technician</th>
+        <th scope="col" class="table-dark">Technician Name</th>
+        <th scope="col" class="table-dark">Product Code</th>
+        <th scope="col" class="table-dark">Serial No</th>
+        <th scope="col" class="table-dark">Warranty</th>
+        <th scope="col" class="table-dark">Contract</th>
+        <th scope="col" class="table-dark">Visit Date</th>
+        <th scope="col" class="table-dark">Start Time</th>
+        <th scope="col" class="table-dark">End Time</th>
+        <th scope="col" class="table-dark">Work Done</th>
+        <th scope="col" class="table-dark">Action</th>
+        <th scope="col" class="table-dark">Remarks</th>  
+      </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            {% for e in alldata %}
+          <th scope="row" bgcolor="skyblue">{{e.Service_Order}}</th>
+          <td bgcolor="skyblue">{{e.Location}}</td>
+          <td bgcolor="skyblue">{{e.Technician}}</td>
+          <td bgcolor="skyblue">{{e.Technician_Name}}</td>
+          <td bgcolor="skyblue">{{e.Product_Code}}</td>
+          <td bgcolor="skyblue">{{e.Serial_No}}</td>
+          <td bgcolor="skyblue">{{e.Warranty}}</td>
+          <td bgcolor="skyblue">{{e.Contract_No}}</td>
+          <td bgcolor="skyblue">{{e.Visit_Date}}</td>
+          <td bgcolor="skyblue">{{e.Start_Time}}</td>
+          <td bgcolor="skyblue">{{e.End_Time}}</td>
+          <td bgcolor="skyblue">{{e.Work_Done}}</td>
+          <td bgcolor="skyblue">{{e.Action}}</td>
+          <td bgcolor="skyblue">{{e.Remark}}</td>
+        </tr>
+        
+      </tbody>
+      {%endfor %}
+  </table>
+
+{% endblock %}

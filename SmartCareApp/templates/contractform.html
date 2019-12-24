@@ -1,0 +1,54 @@
+{% extends 'index.html' %}
+{% block title %} Warranty Extend Form {% endblock %}
+{% block body %} 
+
+
+   
+<nav class="navbar navbar-light mt-4" style="background-color: #e3f2fd;">
+<form name="" action="/contractsave/" method="POST" style="margin-left:400px;">{% csrf_token %}
+     <div class="form-row">
+      <div class="form-group col-md-6">
+        <b>Location</b>
+        <input type="text" class="form-control my-2" name="locno" value="{{val}}" readonly>
+      </div>
+      <div class="form-group col-md-6">
+        <b>Contract Number</b>
+        <input type="tel" class="form-control my-2" name="conno" value="{{contract}}" readonly>
+      </div>
+    </div>
+    <div class="form-group col-md-12">
+      <b>Product Code</b>
+      <input type="text" class="form-control my-2" name="pcode" value="{{pcode}}">
+    </div>
+    <div class="form-group col-md-12">
+      <b>Serial Number</b>
+      <input type="text" class="form-control my-2" name="serno" value="{{serial}}">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4 my-2">
+        <b>Start Date</b>
+        <input type="text" class="form-control my-2"  name="sdate" value="{{stdt}}" placeholder="DD/MM/YYY" readonly>
+      </div>
+      <div class="form-group col-md-4 my-2">
+        <b>End Date</b>
+        <input type="text" class="form-control my-2"  name="edate" value="{{edt}}" placeholder="DD/MM/YYY" readonly>
+      </div>
+      <div class="form-group col-md-4 my-2">
+        <b>Amount</b>
+        <select class="form-control mt-2" name="amount">
+            {% for e in alldata %}
+            <option value="{{e.Amount}} - {{e.Year}}">Rs. {{e.Amount}} for {{e.Year}}</option>
+           {% endfor %}
+           </select>
+      </div>
+    </div>
+    
+    <button type="submit" class="btn btn-primary my-3" style="margin-left: 275px;">Save</button>
+  </form>
+</nav>
+<div class="form-group row mt-5 ml-5" align=center>
+  <div class="col-sm-10">
+    <h1>{{error}}</h1>
+  </div>
+</div>
+  {% endblock %}

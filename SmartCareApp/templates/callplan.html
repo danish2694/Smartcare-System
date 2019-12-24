@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+{% block title %} Maintain Call Planning {% endblock %}
+{% block body %}
+<center><h2>Maintain Technician Planning</h2></center>
+<form class="form-inline mt-3"  name="" action="/callplanning/" method="POST">{% csrf_token %}
+<table style="margin-left: 35%"> 
+    <tr>
+        <td><label class="my-1 mr-2">Service Order</label></td>
+        <td><input type="text" name="sorder" class="form-control my-1 mr-sm-2" id="sorder" value="{{sod}}" readonly required> </td>
+    </tr>
+    <tr>
+        <td> <label class="my-1 mr-2">Appointment Date</label></td>
+        <td> <input type="text" name="apdt" class="form-control my-1 mr-sm-2" id="" value="{{apdt}}" readonly required> </td>
+    </tr>
+    <tr>
+        <td> <label class="my-1 mr-2">Appointment Time</label></td>
+        <td> <input type="text" name="aptm" class="form-control my-1 mr-sm-2" id="" maxlength="4" value="{{aptm}}" required> </td>
+    </tr>
+    
+    <tr>
+        <td> <label class="my-1 mr-2">Technician</label></td>
+        <td> <select name="tech" class="form-control my-1" id="" required>
+            {% for e in alldata %}
+            <option value="{{e.Code}} - {{e.Name}}">{{e.Code}} - {{e.Name}}</option> 
+            {% endfor %}  
+            </td>
+    </tr>
+    
+    <tr>
+        <td> <label class="my-1 mr-2">Execution Date</label></td>
+        <td> <input type="text" name="exdt" class="form-control my-1 mr-sm-2" id="" value="{{exdt}}" required> </td>
+    </tr>
+    <tr>
+        <td> <label class="my-1 mr-2">Execution Time</label></td>
+        <td> <input type="text" name="extm" class="form-control my-1 mr-sm-2" id="" maxlength="4" value="{{extm}}" required> </td>
+    </tr>
+    <tr>
+        <td> <label class="my-1 mr-2">End Time</label></td>
+        <td> <input type="text" name="entm" class="form-control mt-1 mb-3 mr-sm-2" id="" maxlength="4" value="{{entm}}" required> </td>
+    </tr>
+</table>
+
+
+<center><button type="submit" class="btn btn-primary my-3 ml-4">Save</button>
+</center>
+</form>
+<center>
+<h2>{{msg}}</h2>
+</center>
+
+{% endblock %}

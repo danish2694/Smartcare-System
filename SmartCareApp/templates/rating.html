@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+{% block title %} Feedback {% endblock %}
+{% block body %}
+
+  
+  <nav class="navbar navbar-light mt-4" style="background-color: #e3f2fd;">
+    <form class="form-inline" style="margin-left: 400px;" action="/feedback/" method="POST">{% csrf_token %}
+        <b>Enter Service Order</b>
+          <input class="form-control mx-sm-2" type="search" name="sod" placeholder="Enter Service Order" value="{{order}}" maxlength="6" aria-label="Search">
+          <button class="btn btn-primary my-2 my-sm-0" id="divpr" type="submit">Go</button>
+          
+        </form>
+  </nav>
+  <h2 style="margin-left: 300px; margin-top: 100px;">{{msg}}</h2>
+{% endblock %}

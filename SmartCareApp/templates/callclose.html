@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% block title %} Update Call {% endblock %}
+{% block body %}
+
+  <center>
+  <nav class="navbar navbar-light my-4" style="background-color: #e3f2fd;">
+    <form class="form-inline" style="margin-left: 500px;" action="/closesave/" method="POST">{% csrf_token %}
+        <b>Service Order</b>
+          <input class="form-control mx-sm-2" name="sod" value="{{order}}" readonly>
+        </nav>
+        <table class="table-bordered table-active table-sm mt-5" width="40%">
+                <tbody>
+                    <tr>
+                        <td class="bg-primary"><b>Close This Call</b></td>
+                        <td><select name="act">
+                                <option>No</option>
+                                <option>Yes</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+        </table>
+        <button type="submit" class="btn btn-primary my-4">Save</button>
+    </form>
+    </center>
+<center>  <h2>{{msg}}</h2></center>
+
+{% endblock %}

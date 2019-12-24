@@ -1,0 +1,144 @@
+{% extends 'index.html' %}
+{% block title %} Add Royalty {% endblock %}
+{% block body %}
+
+<nav class="navbar navbar-light mt-4" style="background-color: #e3f2fd;">
+    <div style="margin-left:550px;">
+        <b> <h2>Maintain Royalty</h2> </b>
+    </div>
+    </nav>
+    <center>
+        <form name="royalty" action="/royaltysave/" method="POST">{% csrf_token %}
+    <table class="table-bordered table-active table-sm my-4" width="60%">
+            <tbody>
+                <tr>
+                    <td class="bg-primary"><b>Service Order</b></td>
+                    <td><input type="text" name="sod" size="10" value="{{sod}}" readonly> </td>
+                    <td class="bg-primary"><b>Location</b></td>
+                    <td><input type="text" name="loc" size="10" value="{{location}}" readonly> </td>
+                    <td class="bg-primary"><b>Technician</b></td>
+                    <td><input type="text" name="tech" size="10" value="{{tech}}" readonly> </td>
+                </tr>
+            </tbody>
+    </table>
+        <table class="table-bordered table-active table-sm my-4" width="55%">
+                <tbody style="margin-left: 400px;">
+                <tr>
+                    <td class="bg-primary"><b>Service Charge</b></td>
+                    <td><input type="text" name="scharge" size="" value="{{charge}}"> </td>
+                </tr>
+                </tbody>
+            </table>
+                <table class="table-bordered table-active table-sm my-4" width="55%">
+                    <tbody>     
+                    <th scope="row" class="bg-primary">Part Replaced</th>
+                    <td><select name="cat1" aria-valu="""{{ctg1}}">
+                        <option>
+                            ---
+                        </option>
+                        <option>
+                            WAR
+                        </option>
+                        <option>
+                            CHA
+                        </option>
+                        <option>
+                            CON
+                        </option>
+                        <option>
+                            DEA
+                        </option>
+                    </select></td>
+                    <td>
+                        <select name="part1">
+                            {% for e in part %}
+                            <option value="{{e}}">{{e}}</option>
+                            {% endfor %}
+                        </select>
+                        </td>
+                    <th scope="row" class="bg-primary">Part Amount</th>
+                    <td><input type="text" name="pamount1" value="{{pamt1}}"></td>
+                </tr> 
+            </tbody>
+    </table>
+
+    <table class="table-bordered table-active table-sm my-4" width="55%">
+            <tbody>     
+            <th scope="row" class="bg-primary">Part Replaced</th>
+            <td><select name="cat2">
+                <option>
+                    ---
+                </option>
+                <option>
+                    WAR
+                </option>
+                <option>
+                    CHA
+                </option>
+                <option>
+                    CON
+                </option>
+                <option>
+                    DEA
+                </option>
+            </select></td>
+            <td>
+                <select name="part2">
+                    {% for e in part %}
+                    <option value="{{e}}">{{e}}</option>
+                    {% endfor %}
+                </select>
+                </td>
+            <th scope="row" class="bg-primary">Part Amount</th>
+            <td><input type="text" name="pamount2" value="{{pamt2}}"></td>
+            </tr> 
+        </tbody>
+    </table>
+        <table class="table-bordered table-active table-sm my-4" width="55%">
+                <tbody>     
+                <th scope="row" class="bg-primary">Part Replaced</th>
+                <td><select name="cat3">
+                    <option>
+                        ---
+                    </option>
+                    <option>
+                        WAR
+                    </option>
+                    <option>
+                        CHA
+                    </option>
+                    <option>
+                        CON
+                    </option>
+                    <option>
+                        DEA
+                    </option>
+                </select></td>
+                <td>
+                    <select name="part3">
+                        {% for e in part %}
+                        <option value="{{e}}">{{e}}</option>
+                        {% endfor %}
+                    </select>
+                    </td>
+                <th scope="row" class="bg-primary">Part Amount</th>
+                <td><input type="text" name="pamount3" value="{{pamt3}}"></td>
+            </tr> 
+        </tbody>
+    </table>
+
+    <table class="table-bordered table-active table-sm my-4" width="30%">
+            <tbody>
+                <tr>
+                    <td class="bg-primary"><b>Total Received</b></td>
+                    <td><input type="text" name="total" size="20" value="{{total}}" readonly> </td>
+                </tr>
+            </tbody>
+    </table>
+    <button type="submit" class="btn btn-primary mb-3">Save</button>
+    </form>
+    <h2>{{msg}}</h2>
+    </center>
+
+
+{% endblock %}

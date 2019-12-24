@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% block title %} Warranty Extend Form {% endblock %}
+{% block body %} 
+<nav class="navbar navbar-light mt-4" style="background-color: #e3f2fd;">
+<h1 style="margin-left: 500px;">Book New Contract</h1>
+</nav>
+<center>
+<form name="cbook" action="/contractbooksave/" method="POST">{% csrf_token %}
+    <div class="form-group col-md-2 mt-4">
+      <b>Enter Location Number</b>
+      <input type="text" class="form-control my-2" name="loc" value="{{lcn}}">
+    </div>
+    <div class="form-group col-md-2">
+      <b>Contract Number</b>
+      <input type="text" class="form-control my-2" name="contract" value="{{cont}}">
+    </div>
+    <button type="submit" class="btn btn-primary my-3">Submit</button>
+  </form>
+</center>
+<center><h2>{{msg}}</h2></center>
+
+{% endblock %}

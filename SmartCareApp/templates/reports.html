@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% block title %} Download Reports {% endblock %}
+
+{% block body %}
+<center style="margin-top: 100px;">
+<div class="container">
+<div class="col-4 my-4">
+<div class="accordion text-center" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button">
+                <h4><a href='/plainsummery/'>View Plain Summary</a></h4>
+              </button>
+            </h2>
+          </div>   
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button">
+                <h4><a href='/visitreport/'>View Visit Details</a></h4>
+              </button>
+            </h2>
+          </div>
+        </div>
+
+    </div>
+    </div>
+</div>
+</center>
+{% endblock %}}
