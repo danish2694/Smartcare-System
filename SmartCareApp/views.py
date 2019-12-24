@@ -204,7 +204,10 @@ def custdetailsave(request):
 
 
 def servicecentre(request):
-    return render(request,'servicecentre.html')
+    if request.session.has_key('is_logged'):
+        return render(request,'servicecentre.html')
+    else:
+        return HttpResponseRedirect('/login')
 
 def callsave(request):
     sno=lno=fnm=lnm=prdt=flt=add=cty=phno=pincode=er=fr=''

@@ -19,6 +19,10 @@ from SmartCareApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',views.login,name="login"),
+    path('login/',views.login,name="login"),
+    path('logging/',views.logging,name="logging"),
+    path('logout/',views.logout,name="logout"),
     path('test/',views.test,name="test"),
     path('smartcare/',views.smartcare,name="smartcare"),
     path('callcentre/',views.callcentre,name="callcentre"),

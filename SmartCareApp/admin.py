@@ -1,7 +1,8 @@
 from django.contrib import admin
-from SmartCareApp.models import CallCentre,Planning,Location_Details,Details,Technician,Contract,Amount,VisitDetail,Royalty,Rating
+from SmartCareApp.models import LoginDetail,CallCentre,Planning,Location_Details,Details,Technician,Contract,Amount,VisitDetail,Royalty,Rating
 # Register your models here.
 
+admin.site.register(LoginDetail)
 admin.site.register(CallCentre)
 admin.site.register(Planning)
 admin.site.register(Location_Details)
