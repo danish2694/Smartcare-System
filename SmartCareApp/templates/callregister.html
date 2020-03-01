@@ -1,6 +1,6 @@
 {% extends 'index.html' %}
-{% load staticfiles %}
-      
+{% load static %}
+    {% block title %} Register Call {% endblock %}
 {% block body %}
   <center>  <h4>{{error}}</h4> </center>
     <form class="container mt-5" name="ccentre" action="/callsave/" method="POST">{% csrf_token %}

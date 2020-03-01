@@ -12,7 +12,6 @@ import time
 import arrow
 import pandas as pd
 from functools import reduce
-from tika import parser
 
 
 
