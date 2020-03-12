@@ -49,7 +49,7 @@
 
 **3. Display Visits - To view all the Visit Details(Can be many in case of Pending Order).**
 
-**4. View Plannings - To quickly view the Service Order planning(Appointment Date, Technicinal Assigned etc).**
+**4. View Plannings - To quickly view the Service Order planning(Appointment Date, Technician Assigned etc).**
 
 **5. Display Service Order Details - Opens the search page to search for different details as per requirement.**
 
@@ -64,7 +64,7 @@
 ## **1. Maintain Appliance Details.**
 ![DetailsAdd](https://github.com/danish2694/smartcare/blob/master/Screenshots/11.%20DetailsAdd%20Page.png)
 
-## **Saved Details will show in ***Display Appliance Details***.
+## **Saved Details will show in ***Display Appliance Details***.**
 
 ## **2. Display Appliance Details.**
 ![Display Appliance Details](https://github.com/danish2694/smartcare/blob/master/Screenshots/12.%20DetailsView%20Page.png)
@@ -89,7 +89,7 @@
 
 ### ***'Work Done'*** will show options according to the product.
 
-## **Updated Visit can be seen in -**
+## **Updated Visit can be seen in-**
 ## **6. Display Visits.**
 ![ViewVisit](https://github.com/danish2694/smartcare/blob/master/Screenshots/17.%20ViewVisit%20Page.png)
 
@@ -104,3 +104,29 @@
 ## **9. Call Close.**
 ### **We will cost the Call.**
 ![CallClose](https://github.com/danish2694/smartcare/blob/master/Screenshots/20.%20CallClose%20Page.png)
+
+# **Last Section In Service Centre is ***'Download Reports'***.**
+## **Two types of reports can be downloaded.**
+## **Plain Summary.**
+![Summary](https://github.com/danish2694/smartcare/blob/master/Screenshots/21.%20Summary%20Page.png)
+
+## **Visit Reports.**
+![VisitReports](https://github.com/danish2694/smartcare/blob/master/Screenshots/22.%20VisitReports%20Page.png)
+
+# **Remaining Sections of Call Centre.**
+
+## **Extend Appliance Warranty.**
+### **Enter The Location and below page will load up.**
+![ExtendWarranty](https://github.com/danish2694/smartcare/blob/master/Screenshots/23.%20ExtendWarranty%20Page.png)
+### **It will take Product Code and Serial No. only if they are present in DataBase(only Valid Entry). ***'Amount'*** is different for different products and can be selected as needed. System will automatically generate Contract Start Date and End Date along with Contract Number.**
+
+## **Book Extended Warranty.**
+### **Above section registers the Contract details, now we have to Book it in order to make it effective on product. Here, we need to enter Location and Contract number which was generated in previous section.**
+![BookContract](https://github.com/danish2694/smartcare/blob/master/Screenshots/24.%20BookContract%20Page.png)
+
+## **Rate Technician Service.**
+### **Enter the costed Service Order and below page will show up.**
+![Feedback](https://github.com/danish2694/smartcare/blob/master/Screenshots/25.%20Feedback%20Page.png)
+
+## **Last Section is for Update customer Details, Enter the Location and update the fields on the page which loads up.**
+![UpdateDetails](https://github.com/danish2694/smartcare/blob/master/Screenshots/26.%20UpdateDetails%20Page.png)
