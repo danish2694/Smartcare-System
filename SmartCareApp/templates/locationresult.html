@@ -1,5 +1,4 @@
 {% include 'search.html' %}
-{% block title %} View Location {% endblock %}
 
 {% block body %}
 
@@ -20,7 +19,7 @@
     <tbody>
         <tr>
             {% for e in alldata %}      
-          <th scope="row" bgcolor="skyblue"><a href='/ordershow/{{e.Location}}'>{{e.Location}}</a></th>
+          <th scope="row" bgcolor="skyblue"><a href='/order/{{e.Location}}'>{{e.Location}}</a></th>
           <td bgcolor="skyblue">{{e.First_Name}}</td>
           <td bgcolor="skyblue">{{e.Last_Name}}</td>
           <td bgcolor="skyblue">{{e.Product}}</td>

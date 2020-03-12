@@ -3,7 +3,7 @@
     {% block title %} Register Call {% endblock %}
 {% block body %}
   <center>  <h4>{{error}}</h4> </center>
-    <form class="container mt-5" name="ccentre" action="/callsave/" method="POST">{% csrf_token %}
+    <form class="container mt-5" name="ccentre" action="/callregister/" method="POST">{% csrf_token %}
         <table width="100%">
                 <tbody>
                     <tr>

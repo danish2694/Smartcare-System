@@ -2,12 +2,13 @@
 {% block title %} Add Appliance Details {% endblock %}
 {% block body %}
 <center> <h1> Maintain Appliance Details</h1></center>
-<form name='appdetail' action="/appdetailsave/" method="POST">{% csrf_token %}
+{% for e in alldata %}
+<form name='appdetail' action="/appdetails/{{e.Location}}" method="POST">{% csrf_token %}
 <table class="table-bordered table-active table-sm mt-5" width="100%">
         <tbody>
             <tr>
                 <td class="bg-primary"><b>Location</b></td>
-                <td><input class="form-control col-sm-6" type="text" name="locno" size="" value="{{loc}}" readonly> </td>
+                <td><input class="form-control col-sm-6" type="text" name="locno" size="" value="{{e.Location}}" readonly> </td>
                 <td class="bg-primary"><b>Customer Type</b></td>
                 <td><select class="form-control col-sm-6" name="cust" id="inputproduct" width="30">
                         <option value="Customer">Customer</option>
@@ -26,6 +27,7 @@
                 <td class="bg-primary"><b>Date Of Purchase</b></td>
                 <td><input class="form-control col-sm-6" type="text" name="dop" value="{{dpp}}"> </td>
             </tr>
+            {% endfor %}
         </tbody>
     </table>
     <center>

@@ -4,7 +4,7 @@
 
   <center>
   <nav class="navbar navbar-light my-4" style="background-color: #e3f2fd;">
-    <form class="form-inline" style="margin-left: 500px;" action="/closesave/" method="POST">{% csrf_token %}
+    <form class="form-inline" style="margin-left: 500px;" action="/callclose/{{order}}" method="POST">{% csrf_token %}
         <b>Service Order</b>
           <input class="form-control mx-sm-2" name="sod" value="{{order}}" readonly>
         </nav>

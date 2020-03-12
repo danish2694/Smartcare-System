@@ -5,7 +5,7 @@
 <h1 style="margin-left: 500px;">Book New Contract</h1>
 </nav>
 <center>
-<form name="cbook" action="/contractbooksave/" method="POST">{% csrf_token %}
+<form name="cbook" action="/contractbook/" method="POST">{% csrf_token %}
     <div class="form-group col-md-2 mt-4">
       <b>Enter Location Number</b>
       <input type="text" class="form-control my-2" name="loc" value="{{lcn}}">

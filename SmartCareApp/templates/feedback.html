@@ -3,31 +3,35 @@
 {% block body %}
 
 <nav class="navbar navbar-light mt-4" style="background-color: #e3f2fd;">
-        <form class="form-inline" style="margin-left: 400px;" action="/feedbacksave/" method="POST">{% csrf_token %}
+        {% for e in alldata %}
+        {% for e1 in alldata1 %}
+        <form class="form-inline" style="margin-left: 400px;" action="/feedback/" method="POST">{% csrf_token %}
             <b>Enter Service Order</b>
-              <input class="form-control mx-sm-2" type="search" name="sod"  value="{{order}}" readonly>              
+              <input class="form-control mx-sm-2" type="search" name="sod"  value="{{e.Service_Order}}" readonly>              
       </nav>
 
 <table class="table-bordered table-active table-sm mt-5" width="100%">
         <tbody>
             <tr>
                 <td class="bg-primary" width="20%"><b>Customer Name</b></td>
-                <td><input type="text" width="20%" name="cname" size="23" value="{{name}}" readonly> </td>
+                <td><input type="text" width="20%" name="cname" size="23" value="{{e.First_Name}} {{e.Last_Name}}" readonly> </td>
                 <td class="bg-primary" width="20%"><b>Technician</b></td>
-                <td><input type="text" width="20%" name="tname"  size="23" value="{{tech}}" readonly> </td>
+                <td><input type="text" width="20%" name="tname"  size="23" value="{{e1.Technician}} - {{e1.Technician_Name}}" readonly> </td>
             </tr>
            
             <tr>
                 <td class="bg-primary"><b>Product</b></td>
-                <td><input type="text" name="pname" size="23" value="{{prod}}" readonly> </td>
+                <td><input type="text" name="pname" size="23" value="{{e.Product}}" readonly> </td>
                 <td class="bg-primary"><b>Work Done</b></td>
-                <td><input type="text" name="wname"  size="23" value="{{wk}}" readonly> </td>
+                <td><input type="text" name="wname"  size="23" value="{{e1.Work_Done}}" readonly> </td>
             </tr>
             <tr>
                 <td class="bg-primary"><b>Technician Behaviour</b></td>
                 <td><input type="range" name="beh" class="custom-range col-md-6" min="1" max="5" step="1"  size="20" style="background-color:white; "><b style="margin-left: 65px;">{{r}}</b></td>
                 <td class="bg-primary"><b>Technician Service</b></td>
                 <td><input type="range" name="serv" class="custom-range col-md-6" min="1" max="5" step="1"  size="23" style="background-color:white; "><b style="margin-left: 65px;">{{r1}}</b></td>
+                {% endfor %}
+                {% endfor %}
             </tr>
         </tbody>
     </table>

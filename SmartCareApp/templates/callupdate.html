@@ -4,10 +4,17 @@
 
   
   <nav class="navbar navbar-light mt-4" style="background-color: #e3f2fd;">
-    <form class="form-inline" style="margin-left: 400px;" action="/callupdation/" method="POST">{% csrf_token %}
+    <form class="form-inline" style="margin-left: 400px;" action="/callupdate/" method="POST">{% csrf_token %}
         <b>Enter Service Order</b>
-          <input class="form-control mx-sm-2" type="search" name="sod" placeholder="Enter Service Order" value="{{order}}" maxlength="6" aria-label="Search">
+        {% if alldata %}
+        {% for e in alldata %}
+          <input class="form-control mx-sm-2" type="search" name="sod" placeholder="Enter Service Order" value="{{e.Service_Order}}" maxlength="6" aria-label="Search">
           <button class="btn btn-primary my-2 my-sm-0" id="divpr" type="submit">Go</button>
+          {% endfor %}
+          {% else %}
+          <input class="form-control mx-sm-2" type="search" name="sod" placeholder="Enter Service Order" value="{{e.Service_Order}}" maxlength="6" aria-label="Search">
+          <button class="btn btn-primary my-2 my-sm-0" id="divpr" type="submit">Go</button>
+          {% endif %}
         </form>
   </nav>
   <center>
@@ -17,7 +24,7 @@
 {% block js %}
 <script>
 function openwind(wn){
-  wn = window.open("/appdetailsadd/{{location}}","toolbar=0,scrollbars=yes,resizable=yes");
+  wn = window.open("/appdetailsadd/{{e.Location}}","toolbar=0,scrollbars=yes,resizable=yes");
 }
 </script>
 {% endblock %}

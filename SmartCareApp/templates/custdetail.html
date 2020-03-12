@@ -4,7 +4,7 @@
 
   <nav class="navbar navbar-light my-5" style="background-color: #e3f2fd;">
     <center>
-    <form class="form-inline" style="margin-left: 400px;" action="/detailsupdate/" method="POST">{% csrf_token %}
+    <form class="form-inline" style="margin-left: 400px;" action="/custdetail/" method="POST">{% csrf_token %}
         <b>Enter Location</b>
           <input class="form-control mx-sm-2" type="search" name="loc" value="{{order}}" maxlength="10" aria-label="Search">
           <button class="btn btn-primary mb-2 my-sm-0" id="divpr" type="submit">Go</button>

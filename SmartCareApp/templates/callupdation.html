@@ -5,40 +5,42 @@
 <table border="0" cellpadding="5" cellsapcing="10" width="100%">
     <tbody>
         <tr>
+            {% for e1 in alldata1 %}
+            {% for e in alldata %}
             <td align="left" colspan="2">
-                <a href='javascript:openwind();'>Maintain Appliance Details</a>
+                <a href='/appdetails/{{e.Location}}'>Maintain Appliance Details</a>
             </td>
             <td align="right" colspan="2">
-                <a href='/viewplanning/{{order}}' target="_blank">View Plannings</a><br>
+                <a href='/viewplanning/{{e.Service_Order}}' target="_blank">View Plannings</a><br>
             </td>
         </tr>
         <tr>
             <td align="left" colspan="2">
-                <a href='/appdetailshow/{{location}}' target="_blank">Display Appliance Details</a>
+                <a href='/viewdetail/{{e.Location}}' target="_blank">Display Appliance Details</a>
             </td>
             <td align="right" colspan="2">
-                <a href='/orderdetailshow/{{order}}' target="_blank">Display Service Order Details</a><br>
+                <a href='/vieworder/{{e.Service_Order}}' target="_blank">Display Service Order Details</a><br>
             </td>
         </tr>
         <tr>
             <td align="left" colspan="2">
-                <a href='/displayvisit/{{order}}' target="_blank">Display Visits</a>
+                <a href='/displayvisit/{{e.Service_Order}}' target="_blank">Display Visits</a>
             </td>
             <td align="right" colspan="2">
-                <a href='/visit/{{order}}' target="_blank">Update/Maintain Call</a><br>
+                <a href='/visit/{{e.Service_Order}}' target="_blank">Update/Maintain Call</a><br>
             </td>
         </tr>
         <tr>
             <td align="left" colspan="2">
-                <a href='/royalty/{{order}}' target="_blank">Add Service Charge/Part Amount</a>
+                <a href='/royalty/{{e.Service_Order}}' target="_blank">Add Service Charge/Part Amount</a>
             </td>
             <td align="right" colspan="2">
-                <a href='/callclose/{{order}}' target="_blank">Call Close</a><br>
+                <a href='/callclose/{{e.Service_Order}}' target="_blank">Call Close</a><br>
             </td>
         </tr>
         <tr>
             <td align="left" colspan="2">
-                <a href='/royaltyshow/{{order}}' target="_blank">View Royalty</a>
+                <a href='/viewroyalty/{{e.Service_Order}}' target="_blank">View Royalty</a>
              </td>           
         </tr>
     </tbody>
@@ -50,34 +52,36 @@
     <tbody>
         <tr>
             <td class="bg-primary" width="20%"><b>Service Order</b></td>
-            <td><input type="text" name="ordno" size="" value="{{order}}" readonly> </td>
+            <td><input type="text" name="ordno" size="" value="{{e.Service_Order}}" readonly> </td>
             <td class="bg-primary" width="20%"><b>Details</b></td>
-            <td><input type="text" name="det" value="{{detail}}" readonly> </td>
+            <td><input type="text" name="det" value="{{e1.Product_Code}} - {{e1.Serial_No}}" readonly> </td>
         </tr>
         <tr>
             <td class="bg-primary" width="20%"><b>Customer Name</b></td>
-            <td><input type="text" name="name" size="" value="{{name}}" readonly> </td>
+            <td><input type="text" name="name" size="" value="{{e.First_Name}} {{e.Last_Name}}" readonly> </td>
             <td class="bg-primary" width="20%"><b>Status</b></td>
-            <td><input type="text" name="sts" value="{{status}}" readonly> </td>
+            <td><input type="text" name="sts" value="{{e.Status}}" readonly> </td>
         </tr>
         <tr>
             <td class="bg-primary"><b>Location</b></td>
-            <td><input type="text" name="locno" size="" value="{{location}}" readonly> </td>
+            <td><input type="text" name="locno" size="" value="{{e.Location}}" readonly> </td>
             <td class="bg-primary"><b>Product</b></td>
-            <td><input type="text" name="" value="{{product}}" readonly> </td>
+            <td><input type="text" name="" value="{{e.Product}}" readonly> </td>
         </tr>
         <tr>
             <td class="bg-primary"><b>Reported Date</b></td>
-            <td><input type="text" name="rdate" size="" value="{{repdate}}" readonly> </td>
+            <td><input type="text" name="rdate" size="" value="{{e.Reported_Date}}" readonly> </td>
             <td class="bg-primary"><b>Fault</b></td>
-            <td><input type="text" name="ft" value="{{fault}}" readonly> </td>
+            <td><input type="text" name="ft" value="{{e.Fault}}" readonly> </td>
         </tr>
         <tr>
             <td class="bg-primary"><b>Reported Time</b></td>
-            <td><input type="text" name="rtime" size="" value="{{reptime}}" readonly> </td>
+            <td><input type="text" name="rtime" size="" value="{{e.Reported_Time}}" readonly> </td>
             <td class="bg-primary"><b>Mobile</b></td>
-            <td><input type="text" name="mob" value="{{mobile}}" readonly> </td>
+            <td><input type="text" name="mob" value="{{e.Mobile_No}}" readonly> </td>
         </tr>
+        {% endfor %}
+        {% endfor %}
     </tbody>
 </table>
 

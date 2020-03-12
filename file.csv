@@ -1,2 +1,1 @@
-Service Order,Location,Reported Date,Reported Time,Status,First Name,Last Name,Product,Fault,Address,City,Mobile,PIN,Technician,Technician Name,Warranty Status,Visit Date,Start Time,Finish Time,Work Done,Action,Remarks,Updation Date,Updation Time
-390806,RF005585,2019-08-07,1544,Pending,Ajay,Kumar,RF,No Power,"No Where, Dont Know",Agra,8077643235,282001,765003,Kamal Kishore,In Chargeable,07/08/2019,1400,1430,Control Card,Replaced,Replaced,07/08/2019,1552
+id_x,Service_Order,Location_x,First_Name,Last_Name,Product,Fault,Address,City,Mobile_No,Pin_Code,Status,Reported_Date,Reported_Time,id_y,Location_y,Technician,Technician_Name,Product_Code,Serial_No,Warranty,Contract_No,Visit_Date,Start_Time,End_Time,Work_Done,Action,Remark,UDate,UTime

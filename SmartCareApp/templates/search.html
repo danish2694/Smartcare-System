@@ -7,28 +7,28 @@
 
   <table style="margin-left: 30%; margin-bottom:50px;"> 
     <tr>
-        <form class="form-inline"  name="searchord" action="/searchorder/" method="POST">{% csrf_token %}
+        <form class="form-inline"  name="searchord" action="/search/" method="POST">{% csrf_token %}
       <td><label class="my-1 mr-2" for="order">Search Service Order</label></td>
       <td><input type="text" name="sorder" class="form-control my-1 mr-sm-2" id="sorder" value="{{order}}"> </td>
       <td> <button type="submit" class="btn btn-primary my-1 mx-2">Go</button></td>
     </form>
   </tr>
   <tr>
-      <form class="form-inline" name="searchloc" action="/searchloc/" method="POST">{% csrf_token %}
+      <form class="form-inline" name="searchloc" action="/search/" method="POST">{% csrf_token %}
        <td> <label class="my-1 mr-2" for="location">Search Location</label></td>
        <td> <input type="text" name="sloc" class="form-control my-1 mr-sm-2" id="sloc" value="{{location}}"> </td>
        <td> <button type="submit" class="btn btn-primary my-1 mx-2">Go</button></td>
       </form>
   </tr>
   <tr>
-      <form class="form-inline" name="searchmob" action="/searchmob/" method="POST">{% csrf_token %}
+      <form class="form-inline" name="searchmob" action="/search/" method="POST">{% csrf_token %}
        <td> <label class="my-1 mr-2" for="mobile">Search Mobile Number</label></td>
        <td> <input type="text" name="smob" class="form-control my-1 mr-sm-2" id="smob" value="{{mobile}}"> </td>
         <td><button type="submit" class="btn btn-primary my-1 mx-2">Go</button></td>
       </form>
   </tr>
   <tr>
-      <form class="form-inline" name="searchcontract" action="/contractresult/" method="POST">{% csrf_token %}
+      <form class="form-inline" name="searchcontract" action="/search/" method="POST">{% csrf_token %}
        <td> <label class="my-1 mr-2" for="name">Search Contract</label></td>
        <td> <input type="text" name="scontract" class="form-control my-1 mr-sm-2" id="scontract" value="{{contract}}"> </td>
         <td><button type="submit" class="btn btn-primary my-1 mx-2">Go</button></td>

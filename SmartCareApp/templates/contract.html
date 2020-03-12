@@ -3,7 +3,7 @@
 {% block body %} 
 
 <nav class="navbar navbar-light mt-4" style="background-color: #e3f2fd;">
-<form class="form-inline" style="margin-left: 370px;" action="/contractform/" method="POST">{% csrf_token %}
+<form class="form-inline" style="margin-left: 370px;" action="/contract/" method="POST">{% csrf_token %}
     <b>Enter Location Number</b>
         <input class="form-control mx-sm-3" type="search" name="locinput" placeholder="Enter Location" value="">
         <button class="btn btn-primary my-2 my-sm-0" type="submit">Proceed</button>
