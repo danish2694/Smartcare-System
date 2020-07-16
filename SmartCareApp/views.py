@@ -778,6 +778,8 @@ def visit(request,so):
                     obj2=CallCentre.objects.filter(Service_Order=so)
                     for e2 in obj2:
                         rp=e2.Reported_Date
+                    print(rp,'rp')
+                    print(we,'we')
                     if ct=='Dealer':
                         wr='Dealer'
                     else:
@@ -790,6 +792,7 @@ def visit(request,so):
                             else:
                                 wr='In Chargeable'
                                 #print('ow')
+                            print(wr)
                         else:
                             rdate = datetime.strptime(rp, "%d/%m/%Y")     #reported date
                             edate = datetime.strptime(we, "%d/%m/%Y")  #expiry date

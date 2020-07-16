@@ -152,8 +152,8 @@ class Rating(models.Model):
     Technician = models.CharField(max_length=30)
     Technician_Name = models.CharField(max_length=50)
     Product = models.CharField(max_length=10)
-    Work_Done = models.CharField(max_length=10)
-    Behaviour = models.CharField(max_length=10,default='')
+    Work_Done = models.CharField(max_length=50)
+    Behaviour = models.CharField(max_length=50,default='')
     Service = models.CharField(max_length=50,default='')
     
     def __str__(self):
